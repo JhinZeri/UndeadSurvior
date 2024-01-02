@@ -32,7 +32,13 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
+    - AudioKit
     - Micosmo.SensorToolkit
+    - QFramework
+    - QFramework.CoreKit
+    - ResKit
+    - SupportOldQF
+    - UIKit
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

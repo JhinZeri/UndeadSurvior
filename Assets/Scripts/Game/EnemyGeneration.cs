@@ -52,19 +52,14 @@ namespace UndeadSurvivorGame
         private void Update()
         {
             GlobalTime += Time.deltaTime;
-            
+
             mCurrentTime += Time.deltaTime;
 
             if (mCurrentTime >= TimeFrequency)
             {
                 mCurrentTime = 0;
-                // var posX = Random.Range(5, 10);
-                // var posY = Mathf.Sqrt(100 - posX * posX);
-                //
-                // var symbolNum = Random.Range(-1, 2) > 0 ? 1 : -1;
-                // 产生敌人
-                var randomPos = new Vector3(mPlayerTrans.position.x + Random.Range(5f, 10f),
-                    mPlayerTrans.position.y + Random.Range(5f, 7f), 0);
+
+                var randomPos = mPlayerTrans.position + Global.GetRandomPos(5, 10);
                 var enemy = Lean.Pool.LeanPool.Spawn(CurrentEnemyPrefab, randomPos, Quaternion.identity, transform)
                     .GetComponent<Enemy>();
                 enemy.GenerateInit(EnemyDataList[EnemyId]);

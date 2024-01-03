@@ -31,7 +31,7 @@ MonoBehaviour:
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace UndeadSurvivorGame\r\n{\r\n\tpublic
       partial class Enemy : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:5bbb2dd6-b20a-461a-af53-a6897f873257\r\nusing UnityEngine;\r\n\r\nnamespace
+    DesignerCode: "// Generate Id:eac8518f-8259-4ca9-af61-2eeb98e31f55\r\nusing UnityEngine;\r\n\r\nnamespace
       UndeadSurvivorGame\r\n{\r\n\tpublic partial class Enemy : QFramework.IController\r\n\t{\r\n\r\n\t\tpublic
-      SpriteRenderer Sprite;\r\n\r\n\t\tpublic Collider2D Collider;\r\n\r\n\t\tQFramework.IArchitecture
-      QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvior.Interface;\r\n\t}\r\n}\r\n"
+      SpriteRenderer Sprite;\r\n\r\n\t\tpublic Collider2D Collider;\r\n\r\n\t\tpublic
+      UnityEngine.Animator Animator;\r\n\r\n\t\tQFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;\r\n\t}\r\n}\r\n"

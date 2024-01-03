@@ -1,5 +1,6 @@
 using System;
 using Micosmo.SensorToolkit;
+using Timers;
 using UnityEngine;
 
 namespace UndeadSurvivorGame
@@ -24,7 +25,7 @@ namespace UndeadSurvivorGame
         {
             mRangeSensor.OnDetected.RemoveAllListeners();
         }
-        
+
         private void FindEnemy(GameObject obj, Sensor sensor)
         {
             var enemyGo = obj;

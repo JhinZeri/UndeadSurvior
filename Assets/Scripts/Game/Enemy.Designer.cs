@@ -1,4 +1,4 @@
-// Generate Id:5bbb2dd6-b20a-461a-af53-a6897f873257
+// Generate Id:eac8518f-8259-4ca9-af61-2eeb98e31f55
 using UnityEngine;
 
 namespace UndeadSurvivorGame
@@ -10,6 +10,8 @@ namespace UndeadSurvivorGame
 
 		public Collider2D Collider;
 
-		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorArchitecture.Interface;
+		public UnityEngine.Animator Animator;
+
+		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;
 	}
 }

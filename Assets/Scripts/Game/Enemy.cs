@@ -1,14 +1,31 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
+using Sirenix.OdinInspector;
+using UndeadSurvivorGame.SO;
 
 namespace UndeadSurvivorGame
 {
     public partial class Enemy : ViewController
     {
-        public float CurrentSpeed;
+        [Header("Runtime Variable")] public int PrefabId;
+        public float CurSpeed;
+        public float MaxHealth;
+        public float CurHealth;
+        public float CurDamage;
+
+        public List<RuntimeAnimatorController> EnemyAnimatorsList;
 
         private Vector2 mDirVector2;
+
+        // Animator
+        private static readonly int Hit = Animator.StringToHash("hit");
+
+        private void Awake()
+        {
+            Animator.runtimeAnimatorController = null;
+        }
 
         private void Update()
         {
@@ -16,20 +33,28 @@ namespace UndeadSurvivorGame
             {
                 mDirVector2 = (Player.Instance.transform.position - transform.position).normalized;
 
-                transform.Translate(mDirVector2 * (CurrentSpeed * Time.deltaTime));
+                transform.Translate(mDirVector2 * (CurSpeed * Time.deltaTime));
             }
 
             SpriteDirection();
         }
 
+        public void GenerateInit(EnemyDataSO data)
+        {
+            PrefabId = data.ID;
+            MaxHealth = data.MaxHealth;
+            CurDamage = data.DamageValue;
+            CurSpeed = data.NormalSpeed;
+
+            CurHealth = MaxHealth;
+            Animator.runtimeAnimatorController = EnemyAnimatorsList[PrefabId];
+        }
+
         public void UnderAttack()
         {
-            ActionKit.Sequence().Callback(() => Sprite.color = Color.red)
-                .Delay(0.3f, () =>
-                {
-                    Sprite.color = Color.white;
-                    Debug.Log("变白色");
-                }).Start(this);
+            Animator.SetTrigger(Hit);
+            Lean.Pool.LeanPool.Despawn(this, 0.5f);
+            Global.KillNum.Value++;
         }
 
         private void SpriteDirection()

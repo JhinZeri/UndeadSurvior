@@ -1,4 +1,4 @@
-// Generate Id:b6f1e5ff-b6b9-47b6-9231-bd77c5f51d01
+// Generate Id:bb1d3ed9-0f80-4042-b468-5039b61fa98a
 using UnityEngine;
 
 namespace UndeadSurvivorGame
@@ -16,8 +16,8 @@ namespace UndeadSurvivorGame
 
 		public UnityEngine.Rigidbody2D SelfRigid;
 
-		public UnityEngine.Animator SelfAnim;
+		public UnityEngine.Animator SelfAnimator;
 
-		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorArchitecture.Interface;
+		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;
 	}
 }

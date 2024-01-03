@@ -7,18 +7,22 @@ using Sirenix.OdinInspector;
 // 2.命名空间更改后，生成代码之后，需要把逻辑代码文件（非 Designer）的命名空间手动更改
 namespace UndeadSurvivorGame
 {
+    [Serializable]
+    public class PlayerData
+    {
+        public float Speed;
+    }
+
     public partial class Player : ViewController
     {
         public static Player Instance { get; private set; }
 
-        [Serializable]
-        public struct PlayerData
-        {
-            public float Speed;
-        }
+        [Header("Runtime")] public Vector2 MoveVector2;
 
-        [Searchable] public PlayerData PlayerRuntimeData;
-        [Header("运行时数据")] public Vector2 MoveVector2;
+        public PlayerData PlayerRuntimeData;
+
+        // Animator
+        private static readonly int Speed = Animator.StringToHash("speed");
 
         private void Awake()
         {
@@ -35,7 +39,8 @@ namespace UndeadSurvivorGame
 
         void Start()
         {
-            // Code Here
+            UIRoot.Instance.SetResolution(1920, 1080, 0.5f);
+            UIKit.OpenPanel<UIGameStartPanel>();
         }
 
         private void FixedUpdate()
@@ -47,6 +52,11 @@ namespace UndeadSurvivorGame
         {
             MoveInput();
             SpriteDirection();
+        }
+
+        private void LateUpdate()
+        {
+            UpdateAnimator();
         }
 
         private void SpriteDirection()
@@ -62,13 +72,18 @@ namespace UndeadSurvivorGame
             }
         }
 
-        private Vector2 MoveInput()
+        private void MoveInput()
         {
             var xInput = Input.GetAxisRaw("Horizontal");
             var yInput = Input.GetAxisRaw("Vertical");
 
             MoveVector2 = new Vector2(xInput, yInput);
-            return MoveVector2;
+        }
+
+
+        private void UpdateAnimator()
+        {
+            SelfAnimator.SetFloat(Speed, MoveVector2.magnitude);
         }
     }
 }

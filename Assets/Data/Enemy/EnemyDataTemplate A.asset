@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyDataTemplate A
   m_EditorClassIdentifier: 
   ID: 0
-  MaxHealth: 5
-  NormalSpeed: 2
+  MaxHealth: 2
+  NormalSpeed: 1.5
   DamageValue: 1

@@ -1,4 +1,4 @@
-// Generate Id:2a86523f-89f2-4880-ad96-7a68a16c6139
+// Generate Id:fba1520d-180f-4175-8955-c0bd30703ec4
 using UnityEngine;
 
 namespace UndeadSurvivorGame
@@ -6,6 +6,6 @@ namespace UndeadSurvivorGame
 	public partial class WeaponShovel : QFramework.IController
 	{
 
-		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorArchitecture.Interface;
+		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;
 	}
 }

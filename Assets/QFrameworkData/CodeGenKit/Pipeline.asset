@@ -18,20 +18,13 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos:
-    - TypeName: SpriteRenderer
-      PathToRoot: Sprite
-      MemberName: Sprite
-    - TypeName: Collider2D
-      PathToRoot: Collider
-      MemberName: Collider
+    BindInfos: []
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: Enemy
+    ClassName: WeaponShovel
     Namespace: UndeadSurvivorGame
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace UndeadSurvivorGame\r\n{\r\n\tpublic
-      partial class Enemy : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class WeaponShovel : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:eac8518f-8259-4ca9-af61-2eeb98e31f55\r\nusing UnityEngine;\r\n\r\nnamespace
-      UndeadSurvivorGame\r\n{\r\n\tpublic partial class Enemy : QFramework.IController\r\n\t{\r\n\r\n\t\tpublic
-      SpriteRenderer Sprite;\r\n\r\n\t\tpublic Collider2D Collider;\r\n\r\n\t\tpublic
-      UnityEngine.Animator Animator;\r\n\r\n\t\tQFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:fba1520d-180f-4175-8955-c0bd30703ec4\r\nusing UnityEngine;\r\n\r\nnamespace
+      UndeadSurvivorGame\r\n{\r\n\tpublic partial class WeaponShovel : QFramework.IController\r\n\t{\r\n\r\n\t\tQFramework.IArchitecture
+      QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;\r\n\t}\r\n}\r\n"

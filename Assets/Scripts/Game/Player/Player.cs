@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using QFramework;
-using Sirenix.OdinInspector;
+using UndeadSurvivorGame.UI;
 
 // 1.请在菜单 编辑器扩展/Namespace Settings 里设置命名空间
 // 2.命名空间更改后，生成代码之后，需要把逻辑代码文件（非 Designer）的命名空间手动更改
@@ -10,16 +10,20 @@ namespace UndeadSurvivorGame
     [Serializable]
     public class PlayerData
     {
+        public static float MaxHealth = 10f;
+        public BindableProperty<float> CurHealth = new BindableProperty<float>(MaxHealth);
         public float Speed;
     }
 
     public partial class Player : ViewController
     {
+        
         public static Player Instance { get; private set; }
+
+        public PlayerData PlayerRuntimeData;
 
         [Header("Runtime")] public Vector2 MoveVector2;
 
-        public PlayerData PlayerRuntimeData;
 
         // Animator
         private static readonly int Speed = Animator.StringToHash("speed");
@@ -52,11 +56,18 @@ namespace UndeadSurvivorGame
         {
             MoveInput();
             SpriteDirection();
+            SensorPulse();
         }
 
         private void LateUpdate()
         {
             UpdateAnimator();
+        }
+
+
+        private void SensorPulse()
+        {
+            BodyRange.Pulse();
         }
 
         private void SpriteDirection()
@@ -84,6 +95,11 @@ namespace UndeadSurvivorGame
         private void UpdateAnimator()
         {
             SelfAnimator.SetFloat(Speed, MoveVector2.magnitude);
+        }
+
+        public void GetHurt(float damage)
+        {
+            PlayerRuntimeData.CurHealth.Value -= damage;
         }
     }
 }

@@ -1,4 +1,4 @@
-// Generate Id:bb1d3ed9-0f80-4042-b468-5039b61fa98a
+// Generate Id:06bb81e9-6687-44cb-8f35-a40cb1e7c2ee
 using UnityEngine;
 
 namespace UndeadSurvivorGame
@@ -17,6 +17,8 @@ namespace UndeadSurvivorGame
 		public UnityEngine.Rigidbody2D SelfRigid;
 
 		public UnityEngine.Animator SelfAnimator;
+
+		public Micosmo.SensorToolkit.RangeSensor2D BodyRange;
 
 		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;
 	}

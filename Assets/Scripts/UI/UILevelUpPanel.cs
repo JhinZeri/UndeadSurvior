@@ -4,25 +4,25 @@ using QFramework;
 
 namespace UndeadSurvivorGame.UI
 {
-    public class UIGameStartPanelData : UIPanelData
+    public class UILevelUpPanelData : UIPanelData
     {
     }
 
-    public partial class UIGameStartPanel : UIPanel
+    public partial class UILevelUpPanel : UIPanel
     {
         protected override void OnInit(IUIData uiData = null)
         {
-            mData = uiData as UIGameStartPanelData ?? new UIGameStartPanelData();
+            mData = uiData as UILevelUpPanelData ?? new UILevelUpPanelData();
             // please add init code here
 
-            Time.timeScale = 0;
-
-            BtnStart.onClick.AddListener((() =>
+            BtnUpgradeShovel.onClick.AddListener(() =>
             {
-                Time.timeScale = 1f;
+                var shovel = Player.Instance.GetComponentInChildren<WeaponShovel>();
+                shovel.Upgrade();
+                Hide();
                 UIKit.OpenPanel<UIGamePanel>();
-                CloseSelf();
-            }));
+                Time.timeScale = 1f;
+            });
         }
 
         protected override void OnOpen(IUIData uiData = null)
@@ -39,7 +39,7 @@ namespace UndeadSurvivorGame.UI
 
         protected override void OnClose()
         {
-            BtnStart.onClick.RemoveAllListeners();
+            BtnUpgradeShovel.onClick.RemoveAllListeners();
         }
     }
 }

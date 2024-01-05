@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3823108382429586033}
   - component: {fileID: 2368226091153035884}
   - component: {fileID: 3806628733347607858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6508846384504070347}
   - component: {fileID: 497056627704138155}
   - component: {fileID: 6942452512462383223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -185,11 +185,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 0.4, y: 0.9}
   m_Direction: 0
 --- !u!114 &6942452512462383223
 MonoBehaviour:
@@ -207,6 +207,127 @@ MonoBehaviour:
   CustomComponentName: Collider
   CustomComment: 
   mComponentName: Collider2D
+--- !u!1 &5673474615279937809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903362747022536977}
+  - component: {fileID: 29633893885988163}
+  - component: {fileID: 804617889597037250}
+  m_Layer: 6
+  m_Name: BodySensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1903362747022536977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673474615279937809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1083163465471898340}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &29633893885988163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673474615279937809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2d86e514f647b4b1f579a4f0ab9022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signalProcessors: []
+  OnDetected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6495167827078906205}
+        m_TargetAssemblyTypeName: UndeadSurvivorGame.Enemy, Assembly-CSharp
+        m_MethodName: ContactPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLostDetection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6495167827078906205}
+        m_TargetAssemblyTypeName: UndeadSurvivorGame.Enemy, Assembly-CSharp
+        m_MethodName: LostContactPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSomeDetection:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNoDetection:
+    m_PersistentCalls:
+      m_Calls: []
+  signalFilter:
+    IgnoreList: []
+    EnableTagFilter: 0
+    AllowedTags: []
+  DetectionMode: 0
+  Shape: 2
+  Circle:
+    Radius: 1
+  Box:
+    HalfExtents: {x: 0.5, y: 0.5}
+  Capsule:
+    Radius: 0.3
+    Height: 1
+  DetectsOnLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  IgnoreTriggerColliders: 0
+  pulseRoutine:
+    Mode:
+      value: 0
+    UpdateFunction: 0
+    Interval:
+      value: 1
+--- !u!114 &804617889597037250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673474615279937809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: BodySensor
+  CustomComment: 
+  mComponentName: Micosmo.SensorToolkit.RangeSensor2D
 --- !u!1 &6175766965637927619
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5221947606651274007}
   - component: {fileID: 5160861908997980683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +423,7 @@ GameObject:
   - component: {fileID: 1083163465471898340}
   - component: {fileID: 6495167827078906205}
   - component: {fileID: 2712427139136790760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -324,6 +445,7 @@ Transform:
   - {fileID: 8238416184901931133}
   - {fileID: 5221947606651274007}
   - {fileID: 6508846384504070347}
+  - {fileID: 1903362747022536977}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -345,6 +467,7 @@ MonoBehaviour:
   GeneratePrefab: 1
   PrefabFolder: Assets/Art/Prefab
   ArchitectureFullTypeName: UndeadSurvivorGame.UndeadSurvivorArchitecture
+  IsTest: 0
   PrefabId: 0
   CurSpeed: 0
   MaxHealth: 0
@@ -353,8 +476,12 @@ MonoBehaviour:
   EnemyAnimatorsList:
   - {fileID: 9100000, guid: 7e8ad0a3d32dba5438c24cad05a762b6, type: 2}
   - {fileID: 22100000, guid: d11f47649193c3048a380a032e433e51, type: 2}
+  IsContactPlayer: 0
+  RepeatAttackTime: 3
+  ContactTime: 0
   Sprite: {fileID: 3823108382429586033}
   Collider: {fileID: 497056627704138155}
+  BodySensor: {fileID: 29633893885988163}
   Animator: {fileID: 3806628733347607858}
 --- !u!114 &2712427139136790760
 MonoBehaviour:

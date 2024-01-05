@@ -7,6 +7,7 @@ namespace UndeadSurvivorGame
 {
     public class ShovelBullet : MonoBehaviour
     {
+        public float Damage;
         private RangeSensor2D mRangeSensor;
 
         private void Awake()
@@ -34,8 +35,9 @@ namespace UndeadSurvivorGame
                 var enemy = obj.GetComponentInParent<Enemy>();
 
                 Debug.Log("找到Enemy！");
+                
 
-                enemy.UnderAttack();
+                enemy.UnderAttack(Damage);
             }
         }
     }

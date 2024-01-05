@@ -1,4 +1,5 @@
 using QFramework;
+using UndeadSurvivorGame.Utility;
 
 namespace UndeadSurvivorGame
 {
@@ -6,7 +7,7 @@ namespace UndeadSurvivorGame
     {
         protected override void Init()
         {
-            
+            RegisterUtility(new RandomCalculateUtility());
         }
     }
 }

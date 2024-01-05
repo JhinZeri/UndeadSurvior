@@ -1,4 +1,4 @@
-// Generate Id:eac8518f-8259-4ca9-af61-2eeb98e31f55
+// Generate Id:6779b27b-6523-4bbe-838d-268ab16b221a
 using UnityEngine;
 
 namespace UndeadSurvivorGame
@@ -9,6 +9,8 @@ namespace UndeadSurvivorGame
 		public SpriteRenderer Sprite;
 
 		public Collider2D Collider;
+
+		public Micosmo.SensorToolkit.RangeSensor2D BodySensor;
 
 		public UnityEngine.Animator Animator;
 

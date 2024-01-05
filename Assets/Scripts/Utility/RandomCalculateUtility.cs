@@ -1,21 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using QFramework;
 using UnityEngine;
 
-namespace TestCodes
+namespace UndeadSurvivorGame.Utility
 {
-    public class TestRandom : MonoBehaviour
+    public class RandomCalculateUtility : IUtility
     {
-        // Update is called once per frame
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                var randomPos = RandomDistanceAndPos(5f, 10f);
-                Debug.Log("测试的距离范围是5-10,随机出来的向量为: " + randomPos);
-            }
-        }
-
         /// <summary>
         /// 随机距离和位置，生成位置是一个环形
         /// </summary>

@@ -1,4 +1,4 @@
-// Generate Id:59e9c7c1-53b0-48ab-ac00-88b4ac53b9f2
+// Generate Id:8c98c4b5-1d0f-482b-a05e-ac4df7d37320
 using UnityEngine;
 
 namespace UndeadSurvivorGame
@@ -8,6 +8,6 @@ namespace UndeadSurvivorGame
 
 		public UndeadSurvivorGame.WeaponShovel WeaponShovel;
 
-		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorArchitecture.Interface;
+		QFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>UndeadSurvivorGame.UndeadSurvivorArchitecture.Interface;
 	}
 }

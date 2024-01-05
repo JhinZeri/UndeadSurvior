@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
 
-namespace UndeadSurvivorGame
+namespace UndeadSurvivorGame.UI
 {
 	// Generate Id:067be821-68a3-496a-a3ed-7b4c0b4b0da8
 	public partial class UIGameStartPanel
